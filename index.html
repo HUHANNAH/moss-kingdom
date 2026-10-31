@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>苔藓王国：校园微境</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  
+  <main>
+    <section id="stage-map" class="stage active"><div class="map-exploration"><div class="map-area"><div class="map-shell"><img id="map-image" alt=""><div id="map-hotspots"></div><div class="map-hud"><span id="map-progress">0 / 4</span><small>已归位地点</small></div></div></div><aside class="map-inspector" aria-live="polite"><div class="inspector-index"><span id="map-preview-index">01</span><small id="map-preview-status">待调查</small></div><h2 id="map-preview-title">选择一处校园地点</h2><p id="map-preview-hint" class="map-preview-hint"></p><p id="map-preview-profile" class="map-preview-profile"></p><button id="enter-location" class="map-enter-button">进入地点观察 <span>↗</span></button><div class="map-legend"><span><i class="legend-unvisited"></i>待调查</span><span><i class="legend-visited"></i>已查看</span><span><i class="legend-done"></i>已归位</span></div></aside></div></section>
+
+    <section id="stage-location" class="stage"><div class="location-layout"><div class="scene-column"><div class="scene-frame"><img id="detail-image" alt=""><div class="scene-wash"></div><button class="back-scene" id="back-map" aria-label="返回地图">←</button><div id="scene-interactions"></div><div id="location-feedback" class="location-feedback" aria-live="polite"></div></div></div><aside class="backpack"><div class="backpack-head"><span id="location-counter" class="location-counter"></span><span id="selected-department" class="selected-label">未选择</span></div><div id="department-list" class="department-list"></div></aside></div></section>
+
+    <section id="stage-logs" class="stage">
+      <div class="log-top"><h2>根据苔历线索，还原残页中记载的实验</h2><button class="text-button" id="reset-progress">重新开始</button></div>
+      <div class="logs-layout">
+        <aside class="log-sidebar"><div id="log-list"></div></aside>
+        <div class="log-main">
+          <article class="log-card"><h3 id="log-title"></h3><div id="chronicle-text" class="chronicle-text"></div></article>
+          <div class="experience-grid">
+            <section class="controls-panel"><div id="parameter-list" class="parameter-list"></div></section>
+            <section class="observation-panel">
+              <div class="observation-head"><h3 id="state-title"></h3></div>
+              <div class="moss-canvas-wrap" id="moss-observation"><canvas id="moss-canvas" width="1000" height="625" aria-label="部门运作共同影响的苔藓模拟状态"></canvas></div>
+              <p id="observation-status" class="observation-status" role="status"></p>
+              <button id="retry-images" class="text-button" hidden>重新加载图片</button>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <button id="switch-phase" class="phase-switch" aria-label="进入苔历"><img id="switch-phase-image" alt=""></button>
+  <p id="save-status" class="save-status" role="status" aria-live="polite" hidden></p>
+  <script src="config/content.js"></script><script src="config/experience.js"></script><script src="config/layout.js"></script><script src="config/chronicles.js"></script><script src="config/department-model.js"></script><script src="config/moss-visual.js"></script><script src="src/department-model.js"></script><script src="src/moss-renderer.js"></script><script src="src/progress-tools.js"></script><script src="src/app.js"></script>
+</body>
+</html>
