@@ -89,6 +89,7 @@
   function previewMapLocation(id) { state.mapHover = id; document.querySelectorAll('.map-hotspot').forEach(b => b.classList.toggle('is-hovered', b.dataset.location === id)); updateMapInspector(id); }
   function updateMapInspector(id) {
     const loc = locationById(id); if (!loc) return; const i = C.locations.indexOf(loc) + 1;
+    document.querySelector('.map-inspector').style.setProperty('--location-backdrop', 'url("' + new URL(loc.detailImage, document.baseURI).href + '")');
     $('map-preview-index').textContent = String(i).padStart(2, '0'); $('map-preview-title').textContent = loc.name; const sentences=(loc.mapDescription||'').match(/[^。]+。?/g)||[];
     $('map-preview-hint').textContent=sentences[0]||''; $('map-preview-profile').textContent=sentences.slice(1).join('\n');
     $('map-preview-status').textContent = state.placed.has(id) ? '已归位' : state.visited.has(id) ? '已查看' : '待调查';
