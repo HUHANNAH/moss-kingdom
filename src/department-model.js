@@ -11,7 +11,7 @@ window.DepartmentModel = (() => {
    if(n===0)penalty+=c.shortagePenalty[id]||0;
   });
   const score=Math.max(0,Math.min(100,(support/total-penalty)*100));
-  const names=["枯萎重","枯萎轻","正常偏枯萎","正常偏茂盛","茂盛轻","茂盛重"];
+  const names=["苔命休矣","苔势不妙","苔还能行","苔然自若","优势在苔","苔的帝国"];
   const anchors=window.MOSS_KINGDOM_VISUAL.anchors;
   const nearest=anchors.reduce((best,a,i)=>Math.abs(a-score)<Math.abs(anchors[best]-score)?i:best,0);
   return {score,state:{title:names[nearest]}};
