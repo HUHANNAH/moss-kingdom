@@ -2,7 +2,7 @@ window.MOSS_KINGDOM_CONFIG = {
   title: "苔藓内情：昨日之国",
     subtitle: "在运筹楼的角落，出现了一张探险家工作台",
   map: {
-    image: "assets/placeholders/map/four-regions.svg",
+    image: "assets/production/map/map.png",
     alt: "校园俯视图占位素材"
   },
   departments: [
